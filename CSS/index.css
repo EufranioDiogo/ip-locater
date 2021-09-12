@@ -1,0 +1,72 @@
+#app {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.top-container {
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    align-items: center;
+    background-image: url(../images/pattern-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+}
+.u--heading-1 {
+    font-size: 3.2rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+.ip-input-container {
+    width: 40%;
+    background-color: white;
+    border-radius: 1rem;
+    display: flex;
+}
+.ip-address-input {
+    padding: 1rem;
+    width: 90%;
+    border-radius: 1rem 0 0 1rem;
+    outline: 0;
+    border: none;
+}
+.ip-search-button {
+    width: 10%;
+    border-radius: 0 1rem 1rem 0;
+    border: none;
+    background-color:rgb(61, 61, 61);
+    cursor: pointer;
+    background-image: url(../images/icon-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: 0.3s;
+}
+.ip-search-button:hover {
+    background-color:rgb(87, 87, 87);
+}
+
+.ip-info-container {
+    width: 80%;
+    background-color: white;
+    border-radius: 1rem;
+    transform: translateY(45%);
+    padding: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.205);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem 0;
+
+}
+
+.ip-info-data {
+    margin-top: 1rem;
+    display: block;
+    font-size: 2.8rem;
+    color: #4e4e4e;
+}
+.bottom-container {
+    height: 70vh;
+    background-color: red;
+}
