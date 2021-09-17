@@ -102,12 +102,28 @@
         transform: rotate(360deg);
     }
 }
-@media screen and (max-width: 765px) {
+@media screen and (min-width: 2400px) {
+    .ip-input-container  {
+        width: 102.4rem;
+    }
+    .ip-info-container {
+        width: 102.4rem;
+        grid-template-columns: 1fr 1fr;
+        transform: translateY(20%);
+    }
+}
+@media screen and (max-width: 1024px) {
     .ip-input-container  {
         width: 90%;
     }
     .ip-info-container {
         width: 90%;
+        grid-template-columns: 1fr 1fr;
+        transform: translateY(20%);
+    }
+}
+@media screen and (max-width: 765px) {
+    .ip-info-container {
         grid-template-columns: 1fr;
         transform: translateY(20%);
     }
