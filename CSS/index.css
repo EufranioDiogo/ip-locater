@@ -7,7 +7,8 @@
 .top-container {
     display: flex;
     flex-direction: column;
-    height: 30vh;
+    padding: 4rem 0;
+    width: 100vw;
     align-items: center;
     background-image: url(../images/pattern-bg.png);
     background-size: cover;
@@ -17,13 +18,13 @@
 .u--heading-1 {
     font-size: 3.2rem;
     color: white;
-    margin-bottom: 2rem;
 }
 .ip-input-container {
     width: 40%;
     background-color: white;
     border-radius: 1rem;
     display: flex;
+    margin-top: 2rem;
 }
 .ip-address-input {
     padding: 1rem;
@@ -51,13 +52,13 @@
     width: 80%;
     background-color: white;
     border-radius: 1rem;
-    transform: translateY(45%);
     padding: 2rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.205);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem 0;
-
+    z-index: 1001;
+    transform: translateY(40%);
 }
 
 .ip-info-data {
@@ -67,6 +68,47 @@
     color: #4e4e4e;
 }
 .bottom-container {
-    height: 70vh;
-    background-color: red;
+    min-height: 80vh;
+}
+.search-loader-container {
+    position: absolute;
+    width: 12.8rem;
+    height: 12.8rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.loader {
+    position: absolute;
+    margin: auto;
+    animation: loading infinite linear 1s;
+    border-radius: 50%;
+    border-left: 0.5rem solid #4e4e4e;
+    width: 50%;
+    height: 50%;
+}
+@keyframes loading {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@media screen and (max-width: 765px) {
+    .ip-input-container  {
+        width: 90%;
+    }
+    .ip-info-container {
+        width: 90%;
+        grid-template-columns: 1fr;
+        transform: translateY(20%);
+    }
 }

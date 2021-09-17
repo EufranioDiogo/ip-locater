@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
   <title>Frontend Mentor | IP Address Tracker</title>
   <link rel="stylesheet" href="CSS/universal.css">
   <link rel="stylesheet" href="CSS/index.css">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
+
 <body>
   <div id="app">
     <div class="top-container">
       <h1 class="u--heading-1">IP Address Tracker</h1>
 
       <div class="ip-input-container">
-        <input class="ip-address-input" type="text" name="ip" id="">
+        <input class="ip-address-input" v-model="ipInput" type="text" name="ip" id="" @change.enter="search">
 
-        <button class="ip-search-button">
+        <button class="ip-search-button" @click="search">
 
         </button>
       </div>
@@ -32,48 +44,44 @@
         <div class="ip-info-item">
           <h2 class="ip-info-title">IP Address</h2>
 
-          <span class="ip-info-data ip-address-data">Info</span>
+          <span class="ip-info-data ip-address-data">{{ ip }}</span>
         </div>
 
         <div class="ip-info-item">
           <h2 class="ip-info-title">Location</h2>
 
-          <span class="ip-info-data ip-address-location">Info</span>
+          <span class="ip-info-data ip-address-location">{{ location }}</span>
         </div>
 
         <div class="ip-info-item">
           <h2 class="ip-info-title">Timezone</h2>
 
-          <span class="ip-info-data ip-address-timezone">Info</span>
+          <span class="ip-info-data ip-address-timezone">{{ timezone }}</span>
         </div>
 
         <div class="ip-info-item">
           <h2 class="ip-info-title">ISP</h2>
 
-          <span class="ip-info-data ip-address-isp">Info</span>
+          <span class="ip-info-data ip-address-isp">{{ isp }}</span>
         </div>
       </div>
     </div>
 
-    <div class="bottom-container">
-
+    <div v-if="flagSearching" class="search-loader-container">
+      <div class="loader">
+  
+      </div>
     </div>
-  </div>
-  IP Address Tracker
 
-  Search for any IP address or domain
+    <div id="map" class="bottom-container">
+      
+    </div>
 
-  
-  
-  
-    UTC <!-- add offset value dynamically using the API -->
-  
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    
+
   </div>
 
-  <script src="JS/index.js"></script>r
+  <script src="JS/index.js"></script>
 </body>
+
 </html>
